@@ -1,16 +1,16 @@
 import pylab as pl
 import numpy as np
 from matplotlib import colors
-
+'''
 Q=pl.array([-1, 2, 0.5])
 X=pl.array([-2, 2, 0])
 Y=pl.array([0, 0, 2])
-
 '''
+
 X=[np.cos(t) for t in np.linspace(-np.pi,np.pi,1000)]
 Y=[np.sin(t) for t in np.linspace(-np.pi,np.pi,1000)]
-Q=[np.sin(t) for t in np.linspace(-np.pi,np.pi,1000)]
-'''
+Q=[np.sin(t)**2-np.cos(t)**2 for t in np.linspace(-np.pi,np.pi,1000)]
+
 X=np.array(X)
 Y=np.array(Y)
 Q=np.array(Q)
@@ -19,12 +19,13 @@ def potenziale(xp, yp):
     p=Q/((X-xp)**2+(Y-yp)**2)
     return pl.sum(p)
     
-DELTA=0.05
+DELTA=0.1
+dist=5
 
-xmin=X.mean()-5
-xmax=X.mean()+5
-ymin=Y.mean()-5
-ymax=Y.mean()+5
+xmin=X.mean()-dist
+xmax=X.mean()+dist
+ymin=Y.mean()-dist
+ymax=Y.mean()+dist
 
 M=[]
 a=[]

@@ -61,7 +61,7 @@ formta="%."+cif+"f +- %."+cif+"f"
 omegaax=plt.axes([0.1, 0.09, 0.15, 0.075])
 omega=TextBox(omegaax, 'w ', initial=formtw)
 ampiezzaax=plt.axes([0.1, 0.015, 0.15, 0.075])
-ampiezza=TextBox(ampiezzaax, '$\tau$ ', initial=formta)
+ampiezza=TextBox(ampiezzaax, 't_dec ', initial=formta)
 
 massimot=0.8*numpy.array(ta).max()
 

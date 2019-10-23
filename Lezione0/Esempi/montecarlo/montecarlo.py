@@ -1,6 +1,6 @@
 import numpy
 import pylab as plt
-a=10000
+a=100000
 x=numpy.random.rand(a)
 y=numpy.random.rand(a)
 cont=0
@@ -9,17 +9,16 @@ cont=0
 for n in range(len(x)):
 
     if (numpy.sqrt(x[n]**2+y[n]**2)<1):
+    #if (y[n]<numpy.sin(x[n]*numpy.pi)):
         cont=cont+1
         fig1 = plt.figure(1)
-        frame1=fig1.add_axes((.1,.1,.8,.8))
         plt.plot(x[n],y[n],'.',color='red')
     else:
         fig1 = plt.figure(1)
-        frame1=fig1.add_axes((.1,.1,.8,.8))
         plt.plot(x[n],y[n],'.',color='black')
 
 print('\n\n\n\n')
-print((4.*cont/a), 1/numpy.sqrt(a))
+print((4.*cont/a), "+-", 4.*1/numpy.sqrt(a))
 print('\n\n')
 plt.grid(True)
 plt.show()
