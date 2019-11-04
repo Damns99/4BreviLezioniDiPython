@@ -56,6 +56,27 @@ arraydizerii=np.zeros(3, 'int')
 arraydiuni=np.ones(5)
 arraydiuni=np.ones(5, 'int')
 
+##Selezionare alcuni elementi
+#Come vedremo nella quarta lezione, si possono usare delle serie di istruzioni per scorrere tutti gli elementi di un array e selezionarne solo gli elementi che soddisfano una certa proprietà.
+#Se però la proprietà riguarda solo gli indici, questo si può fare facilmente
+
+primi_tre=array1[0:3]
+print('primi_tre = ', primi_tre)
+#Questa sintassi seleziona gli elementi di array1 dall'indice 0 incluso all'indice 3 escluso. Il isultato è ancora un array.
+esempio=array1[1:-1]
+print(esempio)
+esempio=array1[-2:5]
+print(esempio)
+#Questo metodo accetta anche valori negativi, con effetti curiosi
+
+
+elementi_pari=array1[0::2]
+print('elementi_pari = ', elementi_pari)
+#In questo esempio invece, usando invece due volte il simbolo : intendiamo prendere solo gli elementi dall'indice 0 saltando di 2 in 2. Il risultato è un array dei soli elementi di indice pari
+rewind=array1[len(array1)::-1]
+print('rewind = ', rewind)
+#Anche qui possiamo usare valori negativi. In particolare questo ci permette di saltare "all'indietro" e, ad esempio, di invertire l'ordine di un'array con un solo comando
+
 ##Operazioni con gli array
 print('\nOperazioni con gli array:')
 #Come per i vettori, si possono sommare e sottrarre vettori che abbiano la stessa dimensione, nel nostro caso array con lo stesso numero di elementi (altrimenti Python da errore!)
