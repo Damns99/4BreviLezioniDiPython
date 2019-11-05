@@ -26,6 +26,13 @@ array1=np.insert(array1, 4, 18) #possiamo anche non chiamarlo array1, in quel ca
 #quindi: il primo argomento è l'array a cui vogliamo aggiungere qualcosa, il secondo argomento è il posto (-1) dove vogliamo aggiungere il numero, e il terzo argomento è il numero che vogliamo aggiungere
 print(array1)
 
+#Per aggiungere uno o più elementi in fondo ad un array esiste anche il comando append della libreria numpy:
+array2=np.append(array1, -4.)
+print(array2)
+#Mentre per togliere un elemento basta indicare il suo indice alla funzione remove di numpy:
+array2=np.delete(array2,0)
+print(array2)
+
 ##Tipi di array
 #ogni array di numpy ha un tipo ben definito che viene fissato, implicitamente o esplicitamente al momento della creazione
 
