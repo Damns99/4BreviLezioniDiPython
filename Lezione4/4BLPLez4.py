@@ -108,7 +108,7 @@ print('\nISTRUZIONI DI CONTROLLO')
 
 # Per istruzioni di controllo si intendono dei comandi che modificano il flusso di compilazione di un programma in base a determinati confronti e/o controlli su certe variabili. La teoria a riguardo è abbastanza ampia e la vedrete durante il corso di informatica. Qui ci limitiamo a illustrare due istruzioni che ci serviranno in futuro.
 
-## Espressioni condizionali: if
+## Espressioni condizionali: if, else, elif
 # Supponiamo di voler scrivere una funzione in grado di restituire il valore assoluto di un numero.
 # Una possibile soluzione è la seguente:
 def assoluto(x):
@@ -148,6 +148,34 @@ def fattoriale(n):
     
 print(fattoriale(4))
 # La variabile ausiliaria i è utilizzata in questo contesto come contatore, cioè come variabile che tiene il conto del numero di cicli effettuati. Nel caso in esame, stiamo dicendo tramite l'istruzione for che la variabile i deve variare all'interno della lista range(1, n+1) = [1,2,..., n]. Il programma effettua l'operazione R = R*i per tutti i valori possibili che i assume in questa lista, nell'ordine.
+
+## Cicli: while
+# Quando il numero di ripetizioni non è noto a priori o non ben riconducibile all'incremento di un semplice contatore, si può usare un ciclo while, il quale ripete le istruzioni che contiene fino a che la condizione indicata tra parentesi tonde resta vera (attenzione: la controlla anche in ingresso). Vediamo come possiamo modificare la funzione fattoriale usando un while:
+
+def fattoriale(n):
+    i = 1
+    R = 1
+    while(i<=n):
+        R = R*i
+        i = i+1
+    return R
+    
+print(fattoriale(4))
+#Ovviamente il risultato è lo stesso. OCCHIO però a una cosa: è estremamente facile sbagliare la condizione tra parentesi e creare un ciclo infinito! Seriamente, è davvero facile. I cicli for da questo punto di vista sono sicuramente più affidabili.
+
+## Ancora sul ciclo for
+# Abbiamo visto come l'utilizzo di un ciclo for definisca un contatore implicito (nell'esempio precedente la variabile "i" che va da 1 a n estremi compresi). In realtà è possibile utilizzare un ciclo for anche, ad esempio, per scorrere direttamente gli elementi di un array.
+
+def trova_pari(array):
+    R = np.array([])
+    for elem in array:
+        if elem%2 == 0:
+            R = np.append(R,elem)
+    return R
+
+a = np.array([1,2,3,4,5,6,7,8,9])
+print(trova_pari(a))
+# Questa semplice funzione, a partire da un array iniziale chiamato "array", restituisce un nuovo array "R" contenente solo gli elementi pari di quello iniziale. Se avessimo usato un contatore "i" come in precedenza, avremmo dovuto specificare al ciclo for anche la lunghezza dell'array e, soprattutto, avremmo dovuto complicare il codice con delle istruzioni del tipo "array[i]" ogni volta che abbiamo usato la ben più intuitiva variabile "elem"
 
 ###OUTLIERS
 #Outlier è un termine utilizzato in statistica per definire, in un insieme di osservazioni, un valore chiaramente distante dalle altre osservazioni disponibili.
